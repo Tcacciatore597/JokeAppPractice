@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CGx-Cb-87D">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jokes Table View Controller-->
+        <scene sceneID="rOC-Lu-plt">
+            <objects>
+                <tableViewController id="EQA-NZ-JJl" customClass="JokesTableViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Ty-cb-TlL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JokeCell" textLabel="XWO-7r-VGj" style="IBUITableViewCellStyleDefault" id="tva-Kx-tJM">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tva-Kx-tJM" id="yql-NN-w65">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XWO-7r-VGj">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EQA-NZ-JJl" id="40j-Wi-6il"/>
+                            <outlet property="delegate" destination="EQA-NZ-JJl" id="VlN-XZ-zkt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="QFN-oA-F4r">
+                        <barButtonItem key="rightBarButtonItem" title="Get New Jokes" id="EBE-I2-U2x">
+                            <connections>
+                                <segue destination="HHv-JU-7ZZ" kind="show" identifier="JokeSegue" id="bew-xh-bhk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKa-xd-YZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350.72463768115944" y="176.78571428571428"/>
+        </scene>
+        <!--Jokes View Controller-->
+        <scene sceneID="vl2-ta-5Yr">
+            <objects>
+                <viewController id="HHv-JU-7ZZ" customClass="JokesViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eex-Uy-bcu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-eA-rvw">
+                                <rect key="frame" x="16" y="112" width="382" height="726"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raS-eG-kBg">
+                                        <rect key="frame" x="136" y="0.0" width="110" height="136.5"/>
+                                        <state key="normal" title="Get A New Joke"/>
+                                        <connections>
+                                            <action selector="getJokeButtonTapped:" destination="HHv-JU-7ZZ" eventType="touchUpInside" id="6gC-ok-DIW"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="TEST TEXT" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-Mj-aun">
+                                        <rect key="frame" x="149.5" y="196.5" width="83.5" height="136.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjG-X7-IfD">
+                                        <rect key="frame" x="156" y="393" width="70" height="136.5"/>
+                                        <state key="normal" title="Save Joke"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20v-iN-6D2">
+                                        <rect key="frame" x="170.5" y="589.5" width="41.5" height="136.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QXL-fy-Hpp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2tj-eA-rvw" firstAttribute="top" secondItem="QXL-fy-Hpp" secondAttribute="top" constant="24" id="6Am-pk-V6e"/>
+                            <constraint firstItem="QXL-fy-Hpp" firstAttribute="trailing" secondItem="2tj-eA-rvw" secondAttribute="trailing" constant="16" id="7ah-uC-cnR"/>
+                            <constraint firstItem="2tj-eA-rvw" firstAttribute="leading" secondItem="QXL-fy-Hpp" secondAttribute="leading" constant="16" id="Y1P-nU-18Z"/>
+                            <constraint firstItem="QXL-fy-Hpp" firstAttribute="bottom" secondItem="2tj-eA-rvw" secondAttribute="bottom" constant="24" id="gLU-wY-Y4d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KII-cQ-pT0"/>
+                    <connections>
+                        <outlet property="jokeTextView" destination="B7d-Mj-aun" id="c6p-t7-1Xh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwE-Mh-4bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195.6521739130435" y="176.78571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yeV-Bf-iSy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CGx-Cb-87D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JMh-Qa-p7U">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EQA-NZ-JJl" kind="relationship" relationship="rootViewController" id="kSM-af-mCJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACG-5L-oYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559.4202898550725" y="176.78571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
