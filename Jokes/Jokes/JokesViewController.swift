@@ -45,5 +45,12 @@ class JokesViewController: UIViewController {
         })
     }
     
-
+    @IBAction func saveJokeButtonTapped(_ sender: Any) {
+        guard let newJoke = joke?.words else { return }
+        jokesController?.saveJoke(words: newJoke)
+        self.jokeTextView.text = ""
+    }
+    
+    // Animate bottom Label to appear and say "Saved!" then fade out.
+    
 }

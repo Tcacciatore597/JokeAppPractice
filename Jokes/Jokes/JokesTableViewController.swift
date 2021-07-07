@@ -17,6 +17,13 @@ class JokesTableViewController: UITableViewController {
         
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        self.tableView.reloadData()
+        
+    }
 
     // MARK: - Table view data source
 
@@ -39,6 +46,15 @@ class JokesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let index = indexPath.row
+            jokesController.deleteJoke(index: index)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 
     
     // MARK: - Navigation

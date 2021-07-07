@@ -80,6 +80,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjG-X7-IfD">
                                         <rect key="frame" x="156" y="393" width="70" height="136.5"/>
                                         <state key="normal" title="Save Joke"/>
+                                        <connections>
+                                            <action selector="saveJokeButtonTapped:" destination="HHv-JU-7ZZ" eventType="touchUpInside" id="wWL-4Y-xbH"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20v-iN-6D2">
                                         <rect key="frame" x="170.5" y="589.5" width="41.5" height="136.5"/>
